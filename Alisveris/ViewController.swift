@@ -63,7 +63,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         do{
             let results = try  context.fetch(fetchRequest)
             if results.count > 0 {
-                
                 for i in results as! [NSManagedObject]{
                     if  let name = i.value(forKey: "name") as? String{
                         nameArray.append(name)
@@ -73,12 +72,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                         idArray.append(id)
                     }
                     
-                }
-                tableView.reloadData()
-                
-            }
+                }}
             
-           
+            tableView.reloadData()
         }
         catch{
             print("Hata Oluştu")
@@ -99,6 +95,52 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             destinationVC.selectedUUID=selectUUID
         }
     }
-    //Hello everybody
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Shop")
+            
+            let deleteID=idArray[indexPath.row].uuidString
+            
+            fetchRequest.predicate = NSPredicate(format: "id = %@", deleteID)
+            fetchRequest.returnsObjectsAsFaults = false
+            
+            do{
+                let result = try context.fetch(fetchRequest)
+                
+                if result.count > 0 {
+                    for i in result as! [NSManagedObject]{
+
+                        context.delete(i)
+                        nameArray.remove(at: indexPath.row)
+                        idArray.remove(at: indexPath.row)
+                        
+                        self.tableView.reloadData()
+                        
+                        do{
+                            try  context.save()
+                        }
+                        catch{
+                            print("Savelerken Hata oldu")
+                        }
+                        
+                        }
+                        
+                    
+                    
+                    
+                }
+            }
+            catch{
+                print("ID'den çekerken hata oldu")
+            }
+            
+        }
+    }
 }
+//Hello everybody
+
 

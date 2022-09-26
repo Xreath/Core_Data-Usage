@@ -40,7 +40,7 @@ class DetailViewController: UIViewController ,UIImagePickerControllerDelegate,UI
                                 productName.text=name
                             }
                             
-                            if  let price = i.value(forKey: "price") as? Double{
+                            if  let price = i.value(forKey: "price") as? Int{
                                 
                                 productPrice.text = String(price)
                             }
