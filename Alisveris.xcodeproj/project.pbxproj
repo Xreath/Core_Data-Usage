@@ -14,6 +14,7 @@
 		101B98A828E13529001AF98B /* Alisveris.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 101B98A628E13529001AF98B /* Alisveris.xcdatamodeld */; };
 		101B98AA28E1352B001AF98B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101B98A928E1352B001AF98B /* Assets.xcassets */; };
 		101B98AD28E1352B001AF98B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101B98AB28E1352B001AF98B /* LaunchScreen.storyboard */; };
+		1099D59D28E1EE340008D2A1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1099D59C28E1EE340008D2A1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		101B98A928E1352B001AF98B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		101B98AC28E1352B001AF98B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		101B98AE28E1352B001AF98B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1099D59C28E1EE340008D2A1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				101B989D28E13529001AF98B /* AppDelegate.swift */,
 				101B989F28E13529001AF98B /* SceneDelegate.swift */,
 				101B98A128E13529001AF98B /* ViewController.swift */,
+				1099D59C28E1EE340008D2A1 /* DetailViewController.swift */,
 				101B98A328E13529001AF98B /* Main.storyboard */,
 				101B98A928E1352B001AF98B /* Assets.xcassets */,
 				101B98AB28E1352B001AF98B /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				101B98A828E13529001AF98B /* Alisveris.xcdatamodeld in Sources */,
 				101B98A228E13529001AF98B /* ViewController.swift in Sources */,
+				1099D59D28E1EE340008D2A1 /* DetailViewController.swift in Sources */,
 				101B989E28E13529001AF98B /* AppDelegate.swift in Sources */,
 				101B98A028E13529001AF98B /* SceneDelegate.swift in Sources */,
 			);
