@@ -10,6 +10,7 @@ import CoreData
 
 class DetailViewController: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var productSize: UITextField!
     @IBOutlet weak var productPrice: UITextField!
     @IBOutlet weak var productName: UITextField!
@@ -23,6 +24,8 @@ class DetailViewController: UIViewController ,UIImagePickerControllerDelegate,UI
         
         print(selectedName)
         if selectedName != "" {
+            
+            saveButton.isHidden = true
             
             
             if let UUIDString = selectedUUID?.uuidString {
@@ -66,6 +69,8 @@ class DetailViewController: UIViewController ,UIImagePickerControllerDelegate,UI
             }
         }
         else{
+            saveButton.isHidden = false
+            saveButton.isEnabled = false
             productName.text=""
             productSize.text=""
             productPrice.text=""
@@ -90,6 +95,7 @@ class DetailViewController: UIViewController ,UIImagePickerControllerDelegate,UI
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image=info[.originalImage] as? UIImage
+        saveButton.isEnabled = true
         self.dismiss(animated: true)
     }
     
